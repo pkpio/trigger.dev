@@ -134,12 +134,12 @@ export class DeploymentPresenter {
           userName: getUsername(deployment.environment.orgMember?.user),
         },
         deployedBy: deployment.triggeredBy,
-        errorData: this.#prepareErrorData(deployment.errorData),
+        errorData: DeploymentPresenter.prepareErrorData(deployment.errorData),
       },
     };
   }
 
-  #prepareErrorData(errorData: WorkerDeployment["errorData"]): ErrorData | undefined {
+  public static prepareErrorData(errorData: WorkerDeployment["errorData"]): ErrorData | undefined {
     if (!errorData) {
       return;
     }

@@ -8,7 +8,7 @@ export const simplestTask = task({
       body: JSON.stringify({
         hello: "world",
         taskId: "fetch-post-task",
-        foo: "barrrrrrrrrrrrrrrrrrr",
+        foo: "barrrrrrrrrrrrrrrrrrrr",
       }),
     });
 
@@ -125,7 +125,7 @@ export const childTask = task({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: "childTask payload and ctx",
+        title: "childTask payload and ctxr",
         content: {
           payload,
           ctx,

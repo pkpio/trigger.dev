@@ -388,6 +388,9 @@ function useDev({
           resolveDir: process.cwd(),
           sourcefile: "__entryPoint.ts",
         },
+        banner: {
+          js: `process.on("uncaughtException", function(error, origin) { process.send && process.send({ type: "UNCAUGHT_EXCEPTION", payload: { error: { name: error.name, message: error.message, stack: error.stack }, origin }, version: "v1" }); });`,
+        },
         bundle: true,
         metafile: true,
         write: false,
